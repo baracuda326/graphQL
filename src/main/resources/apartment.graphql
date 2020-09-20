@@ -1,0 +1,20 @@
+schema {
+ query: Query
+}
+
+type Query {
+ allApartments: [Apartment]
+ apartment(id: String): Apartment
+}
+
+type Apartment {
+  id: String
+  apartmentUuid: String
+  title: String
+  imagesUrl: String
+  description: String
+  totalSpace: String
+  livingSpace: String
+  floor: String
+  roomsNumber: String
+}
