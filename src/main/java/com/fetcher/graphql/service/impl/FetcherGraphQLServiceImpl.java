@@ -3,7 +3,6 @@ package com.fetcher.graphql.service.impl;
 import com.fetcher.graphql.model.Apartment;
 import com.fetcher.graphql.repository.ApartmentRepository;
 import com.fetcher.graphql.service.FetcherGraphQLService;
-import graphql.ExecutionResult;
 import graphql.GraphQL;
 import graphql.schema.GraphQLSchema;
 import graphql.schema.idl.RuntimeWiring;
@@ -19,6 +18,7 @@ import javax.annotation.PostConstruct;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.UUID;
 
@@ -84,7 +84,7 @@ public class FetcherGraphQLServiceImpl implements FetcherGraphQLService {
     }
 
     @Override
-    public ExecutionResult getResult(String request) {
-        return graphQL.execute(request);
+    public LinkedHashMap getResult(String request) {
+        return graphQL.execute(request).getData();
     }
 }

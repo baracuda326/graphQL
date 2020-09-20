@@ -1,9 +1,8 @@
 package com.fetcher.graphql.service;
 
-import graphql.ExecutionResult;
-
 import java.io.IOException;
+import java.util.LinkedHashMap;
 
 public interface FetcherGraphQLService {
-    ExecutionResult getResult(String request) throws IOException;
+    LinkedHashMap getResult(String request) throws IOException;
 }
