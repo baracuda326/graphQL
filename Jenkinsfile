@@ -16,5 +16,8 @@ pipeline{
                 bat "mvn package"
             }
         }
+        stage('---email---'){
+            emailext body: 'build info', subject: 'build jenkins', to: 'dmitry.asmalouski@gmail.com'
+        }
      }
 }
