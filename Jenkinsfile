@@ -17,7 +17,9 @@ pipeline{
             }
         }
         stage('---email---'){
-            emailext body: 'build info', subject: 'build jenkins', to: 'dmitry.asmalouski@gmail.com'
+            steps{
+                bat emailext body: 'build info', subject: 'build jenkins', to: 'dmitry.asmalouski@gmail.com'
+            }
         }
      }
 }
