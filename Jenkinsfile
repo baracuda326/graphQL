@@ -1,18 +1,20 @@
-pipeline{
-     agent any
-        stage('---clean---'){
-            steps{
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
                 sh "mvn clean"
             }
         }
-        stage('---test---'){
-            steps{
+        stage('Test') {
+            steps {
                 sh "mvn test"
             }
         }
-        stage('---package---'){
-            steps{
+        stage('Deploy') {
+            steps {
                 sh "mvn package"
             }
         }
+    }
 }
